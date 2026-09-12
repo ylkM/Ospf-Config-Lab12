@@ -27,7 +27,7 @@ A four-router, single-area OSPF (Area 0) lab with an ASBR (R1) redistributing a 
 
 ## Lab Tasks
 
-| #  Task 
+| # | Task |
 |---|---|---|
 | 1 | Configure hostnames and IP addresses on each device; enable interfaces (ISPR1 not required) 
 | 2 | Configure a loopback interface on each router 
