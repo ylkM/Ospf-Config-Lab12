@@ -1,0 +1,27 @@
+! ============================================
+! R3
+! ============================================
+hostname R3
+!
+interface Loopback0
+ ip address 3.3.3.3 255.255.255.255
+!
+interface FastEthernet1/0
+ description Link to R1
+ ip address 10.0.13.2 255.255.255.252
+ no shutdown
+!
+interface FastEthernet2/0
+ description Link to R4
+ ip address 10.0.34.1 255.255.255.252
+ no shutdown
+!
+router ospf 1
+ router-id 3.3.3.3
+ auto-cost reference-bandwidth 10000
+ passive-interface Loopback0
+ network 10.0.13.2 0.0.0.0 area 0
+ network 10.0.34.1 0.0.0.0 area 0
+ network 3.3.3.3 0.0.0.0 area 0
+!
+end

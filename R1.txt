@@ -1,0 +1,37 @@
+! ============================================
+! R1 -- ASBR (Area 0 <-> ISP)
+! ============================================
+hostname R1
+!
+interface Loopback0
+ ip address 1.1.1.1 255.255.255.255
+!
+interface GigabitEthernet3/0
+ description WAN link to ISPR1
+ ip address 203.0.113.1 255.255.255.252
+ no shutdown
+!
+interface GigabitEthernet0/0
+ description Link to R2
+ ip address 10.0.12.1 255.255.255.252
+ no shutdown
+!
+interface FastEthernet1/0
+ description Link to R3
+ ip address 10.0.13.1 255.255.255.252
+ no shutdown
+!
+! --- Static default route out to the ISP (used for redistribution) ---
+ip route 0.0.0.0 0.0.0.0 203.0.113.2
+!
+! --- OSPF: Task 3, 4, 5 ---
+router ospf 1
+ router-id 1.1.1.1
+ auto-cost reference-bandwidth 10000
+ passive-interface Loopback0
+ network 10.0.12.1 0.0.0.0 area 0
+ network 10.0.13.1 0.0.0.0 area 0
+ network 1.1.1.1 0.0.0.0 area 0
+ default-information originate
+!
+end
