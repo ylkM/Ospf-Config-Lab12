@@ -2,7 +2,7 @@
 
 A four-router, single-area OSPF (Area 0) lab with an ASBR (R1) redistributing a default route from an ISP connection.
 
-![Network Topology](./topology.svg)
+
 
 ## Repo Structure
 
@@ -29,14 +29,13 @@ A four-router, single-area OSPF (Area 0) lab with an ASBR (R1) redistributing a 
 
 | # | Task | Doc |
 |---|---|---|
-| 1 | Configure hostnames and IP addresses on each device; enable interfaces (ISPR1 not required) | [docs/task1-hostnames-and-ips.md](docs/task1-hostnames-and-ips.md) |
-| 2 | Configure a loopback interface on each router | [docs/task2-loopbacks.md](docs/task2-loopbacks.md) |
-| 3 | Enable OSPF directly on each interface; configure passive interfaces | [docs/task3-ospf-config.md](docs/task3-ospf-config.md) |
-| 4 | Set the reference bandwidth so a FastEthernet interface costs 100 | [docs/task4-reference-bandwidth.md](docs/task4-reference-bandwidth.md) |
-| 5 | Configure R1 as an ASBR advertising a default route into OSPF | [docs/task5-asbr-default-route.md](docs/task5-asbr-default-route.md) |
-| 6 | Check R4's routing table — what default route(s) were added? | [docs/task6-r4-routing-table.md](docs/task6-r4-routing-table.md) |
-| 7 | Inspect OSPF Hello messages in Simulation mode — what fields does the Hello contain? | [docs/task7-ospf-hello-fields.md](docs/task7-ospf-hello-fields.md) |
-
+| 1 | Configure hostnames and IP addresses on each device; enable interfaces (ISPR1 not required) 
+| 2 | Configure a loopback interface on each router 
+| 3 | Enable OSPF directly on each interface; configure passive interfaces 
+| 4 | Set the reference bandwidth so a FastEthernet interface costs 100 
+| 5 | Configure R1 as an ASBR advertising a default route into OSPF 
+| 6 | Check R4's routing table — what default route(s) were added?  
+| 7 | Inspect OSPF Hello messages in Simulation mode — what fields does the Hello contain? |
 ## Addressing Table
 
 | Device | Interface | IP Address | Connects To |
