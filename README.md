@@ -2,7 +2,7 @@
 
 A four-router, single-area OSPF (Area 0) lab with an ASBR (R1) redistributing a default route from an ISP connection.
 
-![Network Topology](./topology.svg)
+
 
 ## Repo Structure
 
